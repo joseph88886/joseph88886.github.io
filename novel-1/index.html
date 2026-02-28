@@ -2,111 +2,126 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>第一部小說｜Joseph Yang</title>
-  <meta name="description" content="第一部小說連載頁面｜Joseph Yang" />
-
+  <meta name="description" content="第一部小說：章節列表、簡介與閱讀入口。" />
   <style>
+    :root{
+      --bg:#0b0f14;
+      --card:#0f1620;
+      --text:#e9eef6;
+      --muted:rgba(233,238,246,.72);
+      --line:rgba(233,238,246,.14);
+      --accent:#8fb3ff;
+      --accent2:#ff4d5a;
+      --shadow:0 18px 60px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans TC","PingFang TC",sans-serif;
-      background:#111;
-      color:#eee;
-      line-height:1.9;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"PingFang TC","Noto Sans TC",sans-serif;
+      background:
+        radial-gradient(1200px 800px at 18% 12%, rgba(143,179,255,.15), transparent 60%),
+        radial-gradient(900px 700px at 82% 18%, rgba(255,77,90,.10), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.75;
     }
-
-    .wrap{
-      max-width:900px;
-      margin:0 auto;
-      padding:60px 20px;
+    a{color:inherit}
+    .wrap{max-width:980px;margin:0 auto;padding:56px 20px 88px}
+    .top{
+      display:flex;gap:20px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;
+      margin-bottom:18px;
     }
-
-    h1{
-      font-size:36px;
-      margin:0 0 10px 0;
-      letter-spacing:1px;
+    .brand{
+      display:flex;flex-direction:column;gap:10px;min-width:260px;
     }
-
-    .subtitle{
-      color:#aaa;
-      margin-bottom:40px;
-    }
-
-    .card{
-      border:1px solid rgba(255,255,255,.15);
-      border-radius:18px;
-      padding:30px;
-      margin-bottom:20px;
-      background:rgba(255,255,255,.02);
-    }
-
-    a{
-      color:#fff;
-      text-decoration:none;
-    }
-
-    a:hover{
-      opacity:.7;
-    }
-
-    .chapter{
-      padding:12px 0;
-      border-bottom:1px solid rgba(255,255,255,.1);
-    }
-
-    .nav{
-      margin-top:40px;
-    }
-
+    .kicker{color:var(--muted);font-size:14px;letter-spacing:.12em;text-transform:uppercase}
+    h1{margin:0;font-size:42px;letter-spacing:-.02em}
+    .tagline{margin:0;color:var(--muted);max-width:58ch}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px}
     .btn{
-      display:inline-block;
-      padding:10px 16px;
-      border:1px solid rgba(255,255,255,.2);
-      border-radius:12px;
-      margin-right:10px;
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:12px 14px;border:1px solid var(--line);border-radius:14px;
+      text-decoration:none;background:rgba(255,255,255,.02);
     }
-
-    footer{
-      margin-top:60px;
-      font-size:13px;
-      color:#777;
+    .btn.primary{border-color:rgba(143,179,255,.35);background:rgba(143,179,255,.10)}
+    .btn:hover{border-color:rgba(233,238,246,.28)}
+    .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-top:18px}
+    @media (max-width:880px){.grid{grid-template-columns:1fr}}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:22px;
     }
+    .card h2{margin:0 0 10px;font-size:18px;letter-spacing:.02em}
+    .meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+    .pill{
+      border:1px solid var(--line);border-radius:16px;padding:10px 12px;
+      color:var(--muted);font-size:14px
+    }
+    .toc{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+    .toc a{
+      display:flex;gap:10px;justify-content:space-between;align-items:center;
+      padding:12px 14px;border:1px solid var(--line);border-radius:16px;
+      text-decoration:none;background:rgba(0,0,0,.10)
+    }
+    .toc a:hover{border-color:rgba(143,179,255,.35)}
+    .toc .n{color:var(--muted);font-variant-numeric:tabular-nums}
+    .note{color:var(--muted);font-size:14px;margin:10px 0 0}
+    footer{margin-top:20px;color:var(--muted);font-size:13px;opacity:.85}
+    .back{margin-top:18px;display:inline-block;color:var(--muted);text-decoration:none}
   </style>
 </head>
-
 <body>
   <div class="wrap">
-    <h1>第一部小說</h1>
-    <div class="subtitle">連載入口頁</div>
-
-    <div class="card">
-
-      <div class="chapter">
-        <a href="/novel-1/ch01.html">第 1 章：請填寫章名</a>
+    <div class="top">
+      <div class="brand">
+        <div class="kicker">Joseph Yang · Novel</div>
+        <h1>第一部小說</h1>
+        <p class="tagline">這裡是「第一部」的官方閱讀入口：簡介、章節、更新。你只要把章節 HTML 放上來，這頁就會自動變成你的目錄。</p>
+        <div class="actions">
+          <a class="btn primary" href="./ch01.html">開始閱讀（第 1 章）</a>
+          <a class="btn" href="/">回首頁</a>
+          <a class="btn" href="mailto:ieasy@me.com">聯絡我</a>
+        </div>
       </div>
-
-      <div class="chapter">
-        <a href="/novel-1/ch02.html">第 2 章：請填寫章名</a>
-      </div>
-
-      <div class="chapter">
-        <a href="/novel-1/ch03.html">第 3 章：請填寫章名</a>
-      </div>
-
     </div>
 
-    <div class="nav">
-      <a class="btn" href="/">回首頁</a>
+    <div class="grid">
+      <section class="card">
+        <h2>簡介</h2>
+        <p>
+          （把你的第一部小說簡介貼在這裡。三到八行最好：一句鉤子 + 一段命題 + 一句威脅。）
+        </p>
+        <div class="meta">
+          <div class="pill">狀態：連載中 / 完結（自行改）</div>
+          <div class="pill">更新：YYYY-MM-DD（自行改）</div>
+          <div class="pill">風格：冷壓 / 制度 / 權力（自行改）</div>
+          <div class="pill">閱讀提示：建議夜讀（自行改）</div>
+        </div>
+        <p class="note">你想做成「吸引蝴蝶的花」，重點不是花紋，是：封面感 + 鉤子句 + 立刻能按的開始閱讀。</p>
+      </section>
+
+      <aside class="card">
+        <h2>章節目錄</h2>
+        <div class="toc">
+          <a href="./ch01.html"><span>第 1 章：標題（自行改）</span><span class="n">→</span></a>
+          <a href="./ch02.html"><span>第 2 章：標題（自行改）</span><span class="n">→</span></a>
+          <a href="./ch03.html"><span>第 3 章：標題（自行改）</span><span class="n">→</span></a>
+        </div>
+        <p class="note">先上 1–3 章就夠。讀者會因為「可讀」留下，不會因為「完美」留下。</p>
+      </aside>
     </div>
 
-    <footer>
-      © <span id="y"></span> Joseph Yang
-    </footer>
+    <a class="back" href="/">← 回 joseyang.com</a>
+    <footer>© <span id="y"></span> Joseph Yang · joseyang.com</footer>
   </div>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
